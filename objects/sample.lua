@@ -1,4 +1,4 @@
-local Objects = require "objects"
+local Objects = require("objects")
 
 local Sample = Objects:new()
 
