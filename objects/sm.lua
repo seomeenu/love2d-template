@@ -1,6 +1,6 @@
-local Objects = require("objects")
+local Object = require("object")
 
-local SM = Objects:new()
+local SM = Object:new()
 
 function SM:init()
     SM:load_scene("game")

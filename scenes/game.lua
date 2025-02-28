@@ -18,9 +18,9 @@ local function check_filtered(b, filters)
     return filtered
 end
 
-local Objects = require("objects")
+local Object = require("object")
 
-local Game = Objects:new()
+local Game = Object:new()
 
 function Game:add(object, ...)
     local o = object:new()

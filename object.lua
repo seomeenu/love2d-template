@@ -1,22 +1,22 @@
-local Objects = {}
+local Object = {}
 
-function Objects:new(obj)
+function Object:new(obj)
     obj = obj or {}
     setmetatable(obj, self)
     self.__index = self
     return obj
 end
 
-function Objects:init()
+function Object:init()
     
 end
 
-function Objects:update(dt)
+function Object:update(dt)
   -- update object properties
 end
 
-function Objects:draw()
+function Object:draw()
   -- draw object on screen
 end
 
-return Objects
+return Object

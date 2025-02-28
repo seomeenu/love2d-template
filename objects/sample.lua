@@ -1,6 +1,6 @@
-local Objects = require("objects")
+local Object = require("object")
 
-local Sample = Objects:new()
+local Sample = Object:new()
 
 function Sample:init(gm, x, y)
     self.gm = gm
