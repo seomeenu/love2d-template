@@ -8,7 +8,7 @@ end
 
 function SM:load_scene(name)
     self.scene = require("scenes."..name):new()
-    self.scene:init()
+    self.scene:init(self)
 end
 
 function SM:draw()

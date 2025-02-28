@@ -20,16 +20,16 @@ end
 
 local Objects = require("objects")
 
-local GM = Objects:new()
+local Game = Objects:new()
 
-function GM:add(object, ...)
+function Game:add(object, ...)
     local o = object:new()
     o:init(self, ...)
     table.insert(self.objects, o)
     return o
 end
 
-function GM:remove(object)
+function Game:remove(object)
     for i, o in ipairs(self.objects) do
         if o == object then
             table.remove(self.objects, i)
@@ -38,27 +38,28 @@ function GM:remove(object)
     end
 end
 
-function GM:init()
+function Game:init(sm)
+    self.sm = sm
     self.objects = {}
 end
 
-function GM:update(dt)
+function Game:update(dt)
     for _, object in ipairs(self.objects) do
         object:update(dt)
     end
 end
 
-function GM:draw()
+function Game:draw()
     for _, object in ipairs(self.objects) do
         object:draw()
     end
 end
 
-function GM:keypressed(key)
+function Game:keypressed(key)
     -- self.player:keypressed(key)
 end
 
-function GM:check(a, filters)
+function Game:check(a, filters)
     local cols = {}
     for _, b in ipairs(self.objects) do
         if not check_filtered(b, filters) then
@@ -70,7 +71,7 @@ function GM:check(a, filters)
     return cols
 end
 
-function GM:move_x(a, x, filters)
+function Game:move_x(a, x, filters)
     a.x = a.x+x
     local cols = self:check(a, filters)
     for _, c in ipairs(cols) do
@@ -86,7 +87,7 @@ function GM:move_x(a, x, filters)
     return nil
 end
 
-function GM:move_y(a, y, filters)
+function Game:move_y(a, y, filters)
     a.y = a.y+y
     local cols = self:check(a, filters)
     for _, c in ipairs(cols) do
@@ -102,4 +103,4 @@ function GM:move_y(a, y, filters)
     return nil
 end
 
-return GM
+return Game
