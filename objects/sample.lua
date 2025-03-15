@@ -2,8 +2,8 @@ local Object = require("object")
 
 local Sample = Object:new()
 
-function Sample:init(gm, x, y)
-    self.gm = gm
+function Sample:init(sc, x, y)
+    self.sc = sc
     self.tag = "sample"
     self.col = true
 

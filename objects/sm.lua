@@ -3,7 +3,7 @@ local Object = require("object")
 local SM = Object:new()
 
 function SM:init()
-    SM:load_scene("game")
+    SM:load_scene("sample")
 end
 
 function SM:load_scene(name)
