@@ -1,6 +1,6 @@
-local Object = require("object")
+local Scene = require("scenes.scene")
 
-local Sample = Object:new()
+local Sample = Scene:new()
 
 function Sample:init(sm)
     self.sm = sm
