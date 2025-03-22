@@ -9,9 +9,10 @@ local sm
 
 function love.load()
     love.graphics.setDefaultFilter("nearest", "nearest")
+    love.graphics.setLineStyle("rough")
 
     local w, h = love.graphics.getDimensions()
-    GLOBAL_ZOOM = CANVAS_W/w
+    GLOBAL_ZOOM = w/CANVAS_W
 
     shader = love.graphics.newShader("data/key.glsl")
     
