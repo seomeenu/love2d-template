@@ -1,4 +1,6 @@
-SCREEN_W, SCREEN_H = 1280, 720
+CANVAS_W, CANVAS_H = 640, 360
+
+GLOBAL_ZOOM = 1
 
 function rgb(r, g, b)
     return {r/255, g/255, b/255}

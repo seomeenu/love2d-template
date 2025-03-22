@@ -1,22 +1,22 @@
 local Scene = require("scenes.scene")
 
-local Sample = Scene:new()
+local Game = Scene:new()
 
-function Sample:init(sm)
+function Game:init(sm)
     self.sm = sm
     self.objects = {}
 end
 
-function Sample:draw()
+function Game:draw()
     for _, object in ipairs(self.objects) do
         object:draw()
     end
 end
 
-function Sample:update(dt)
+function Game:update(dt)
     for _, object in ipairs(self.objects) do
         object:update(dt)
     end
 end
 
-return Sample
+return Game
